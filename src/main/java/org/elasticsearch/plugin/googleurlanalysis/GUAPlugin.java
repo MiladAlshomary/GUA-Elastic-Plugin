@@ -2,6 +2,7 @@ package org.elasticsearch.plugin.googleurlanalysis;
 
 import org.elasticsearch.plugins.AbstractPlugin;
 import org.elasticsearch.river.RiversModule;
+import org.elasticsearch.plugin.googleurlanalysis.GUARestModule;
 
 public class GUAPlugin extends AbstractPlugin {
 
@@ -9,7 +10,7 @@ public class GUAPlugin extends AbstractPlugin {
 	}
 
 	public String name() {
-		return "river-google-url-analytic";
+		return "GUARiver";
 	}
 
 	public String description() {
@@ -17,7 +18,7 @@ public class GUAPlugin extends AbstractPlugin {
 	}
 
 	public void onModule(RiversModule module) {
-		module.registerRiver("Shortner", GUARestModule.class);
+		module.registerRiver("GUARiver", GUARestModule.class);
 	}
 
 }
